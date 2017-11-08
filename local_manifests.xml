@@ -17,6 +17,7 @@
 
   <!-- Lineage Repos -->
   <project name="LineageOS/android_device_qcom_common"                revision="cm-14.1"      path="device/qcom/common"                remote="github" />
+  <project name="LineageOS/android_device_qcom_sepolicy"              revision="lineage-15.0" path="device/qcom/sepolicy"              remote="github" />
   <project name="LineageOS/android_vendor_qcom_opensource_interfaces" revision="lineage-15.0" path="vendor/qcom/opensource/interfaces" remote="github"  >
     <copyfile src="os_pickup.bp" dest="vendor/qcom/Android.bp" />
   </project>
