@@ -27,6 +27,7 @@ function patch()
     external_sony_boringssl-compat
     device_qcom_sepolicy
     hardware_qcom_camera
+    hardware_qcom_media-caf
     kernel_oneplus_msm8974
     kernel_sony_msm8930
     packages_apps_Snap-bacon
