@@ -46,6 +46,16 @@ function patch()
   fi;
   croot;
   # ==================================================
+  # CAF HAL detection
+  if [ ! -d "hardware/qcom/display/.git" ]; then
+    echo -e "CAF Display HAL detected. Whitelisting hardware/qcom/display";
+    whitelist+=('hardware_qcom_display');
+  fi
+  if [ ! -d "hardware/qcom/media/.git" ]; then
+    echo -e "CAF Media HAL detected. Whitelisting hardware/qcom/media";
+    whitelist+=('hardware_qcom_media');
+  fi
+  # ==================================================
   # Rebase
   for repo in $(curl -s https://api.github.com/orgs/Fabulous-Oreo/repos\?per_page\=200 | grep html_url | awk 'NR%2 == 0' | cut -d ':' -f 2-3 | tr -d '",'); do
   {
