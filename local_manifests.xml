@@ -22,7 +22,7 @@
     <copyfile src="os_pickup.bp" dest="vendor/qcom/Android.bp" />
   </project>
 
-  <!-- Device repos -->
+  <!-- Remove unused device repos -->
   <remove-project name="device/asus/fugu" />
   <remove-project name="device/asus/fugu-kernel" />
   <remove-project name="device/common" />
@@ -65,7 +65,7 @@
   <remove-project name="device/linaro/hikey-kernel" />
   <remove-project name="device/sample" />
 
-  <!-- Hardware repos -->
+  <!-- Remove unused hardware repos -->
   <remove-project name="platform/hardware/intel/audio_media" />
   <remove-project name="platform/hardware/intel/bootstub" />
   <remove-project name="platform/hardware/intel/common/bd_prov" />
