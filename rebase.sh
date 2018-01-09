@@ -26,7 +26,6 @@ function patch()
     device_oppo_common
     device_sony_taoshan
     external_sony_boringssl-compat
-    device_qcom_sepolicy
     hardware_qcom_camera
     hardware_qcom_media-caf
     kernel_oneplus_msm8974
