@@ -5,7 +5,7 @@
 
   <!-- Remotes-->
   <remote name="github"   fetch="https://github.com" />
-  <remote name="fabulous" fetch="https://github.com/Fabulous-Oreo" revision="refs/heads/oreo" />
+  <remote name="fabulous" fetch="https://github.com/Fabulous-Oreo" revision="refs/heads/oreo-mr1" />
 
   <!--Device repos-->
   <project name="device_oneplus_bacon"           path="device/oneplus/bacon"           remote="fabulous" />
@@ -20,6 +20,7 @@
   <!-- Lineage Repos -->
   <project name="LineageOS/android_device_qcom_common"                revision="cm-14.1"      path="device/qcom/common"                remote="github" />
   <project name="LineageOS/android_device_qcom_sepolicy"              revision="lineage-15.0" path="device/qcom/sepolicy"              remote="github" />
+  <project name="LineageOS/android_vendor_qcom_opensource_cryptfs_hw" revision="lineage-15.0" path="vendor/qcom/opensource/cryptfs_hw"  remote="github" />
   <project name="LineageOS/android_vendor_qcom_opensource_interfaces" revision="lineage-15.0" path="vendor/qcom/opensource/interfaces" remote="github"  >
     <copyfile src="os_pickup.bp" dest="vendor/qcom/Android.bp" />
   </project>
@@ -42,6 +43,7 @@
   <remove-project name="device/generic/mini-emulator-mips64" />
   <remove-project name="device/generic/mini-emulator-x86" />
   <remove-project name="device/generic/mini-emulator-x86_64" />
+  <remove-project name="device/generic/uml" />
   <remove-project name="device/generic/qemu" />
   <remove-project name="device/generic/x86" />
   <remove-project name="device/generic/x86_64" />
@@ -55,6 +57,7 @@
   <remove-project name="device/google/marlin-kernel" />
   <remove-project name="device/google/muskie" />
   <remove-project name="device/google/taimen" />
+  <remove-project name="device/google/wahoo-kernel" />
   <remove-project name="device/google/vrservices" />
   <remove-project name="device/huawei/angler" />
   <remove-project name="device/huawei/angler-kernel" />
