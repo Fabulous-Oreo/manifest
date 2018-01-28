@@ -72,8 +72,7 @@ function patch()
     echo "";
     echo -e "\e[1;32mRebasing $(echo $repo | cut -d '/' -f 5)...\e[0m";
     cd $(echo $repo | cut -d '/' -f 5 | sed 's/_/\//g');
-    git fetch $repo $branch;
-    git rebase FETCH_HEAD;
+    git pull $repo $branch --rebase;
     croot;
   }
   done;
