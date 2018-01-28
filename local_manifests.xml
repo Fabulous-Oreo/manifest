@@ -70,6 +70,7 @@
   <remove-project name="device/linaro/hikey" />
   <remove-project name="device/linaro/hikey-kernel" />
   <remove-project name="device/sample" />
+  <remove-project name="device/generic/uml" />
 
   <!-- Remove unused hardware repos -->
   <remove-project name="platform/hardware/intel/audio_media" />
