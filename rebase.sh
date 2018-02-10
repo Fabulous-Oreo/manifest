@@ -37,13 +37,11 @@ function patch()
   # ==================================================
   # Repo root
   
-  if [ -z "$(type -t croot)" ]; then
+  if [ !$(declare -f croot > /dev/null; echo $?) ]; then
     while [ ! -e './build/envsetup.sh' ]; do
       cd ../;
     done;
-  
     source ./build/envsetup.sh;
-  
   fi;
   croot;
   # ==================================================
