@@ -27,6 +27,7 @@ function patch()
     device_sony_taoshan
     external_sony_boringssl-compat
     hardware_qcom_camera
+    hardware_qcom_audio-caf
     hardware_qcom_media-caf
     kernel_oneplus_msm8974
     kernel_sony_msm8930
@@ -46,6 +47,10 @@ function patch()
   croot;
   # ==================================================
   # CAF HAL detection
+  if [ ! -d "hardware/qcom/audio/.git" ]; then
+    echo -e "CAF Audio HAL detected. Whitelisting hardware/qcom/media";
+    whitelist+=('hardware_qcom_audio');
+  fi
   if [ ! -d "hardware/qcom/display/.git" ]; then
     echo -e "CAF Display HAL detected. Whitelisting hardware/qcom/display";
     whitelist+=('hardware_qcom_display');
