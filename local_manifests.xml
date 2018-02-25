@@ -12,7 +12,7 @@
   <project name="device_oneplus_bacon"           path="device/oneplus/bacon"           remote="fabulous" />
   <project name="device_oppo_common"             path="device/oppo/common"             remote="fabulous" />
   <project name="external_sony_boringssl-compat" path="external/sony/boringssl-compat" remote="fabulous" />
-  <project name="hardware_qcom_audio-caf"        path="hardware/qcom/audio"            remote="fabulous" />
+  <project name="hardware_qcom_audio-caf"        path="hardware/qcom/audio-caf"            remote="fabulous" />
   <project name="hardware_qcom_camera"           path="hardware/qcom/camera"           remote="fabulous" />
   <project name="hardware_qcom_media-caf"        path="hardware/qcom/media/msm8974"    remote="fabulous" />
   <project name="kernel_oneplus_msm8974"         path="kernel/oneplus/msm8974"         remote="fabulous" />
