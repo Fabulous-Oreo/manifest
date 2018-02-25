@@ -48,7 +48,7 @@ function patch()
   # ==================================================
   # CAF HAL detection
   if [ ! -d "hardware/qcom/audio/.git" ]; then
-    echo -e "CAF Audio HAL detected. Whitelisting hardware/qcom/media";
+    echo -e "CAF Audio HAL detected. Whitelisting hardware/qcom/audio";
     whitelist+=('hardware_qcom_audio');
   fi
   if [ ! -d "hardware/qcom/display/.git" ]; then
