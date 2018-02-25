@@ -47,7 +47,6 @@
   <remove-project name="device/generic/mini-emulator-mips64" />
   <remove-project name="device/generic/mini-emulator-x86" />
   <remove-project name="device/generic/mini-emulator-x86_64" />
-  <remove-project name="device/generic/uml" />
   <remove-project name="device/generic/qemu" />
   <remove-project name="device/generic/x86" />
   <remove-project name="device/generic/x86_64" />
