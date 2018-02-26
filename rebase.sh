@@ -77,6 +77,10 @@ function patch()
     echo "";
     echo -e "\e[1;32mRebasing $(echo $repo | cut -d '/' -f 5)...\e[0m";
     cd $(echo $repo | cut -d '/' -f 5 | sed 's/_/\//g');
+    if [ ! $(git remote | grep fabulous) > /dev/null ];
+    then
+      git remote add fabulous $repo;
+    fi
     git pull $repo $branch --rebase;
     croot;
   }
