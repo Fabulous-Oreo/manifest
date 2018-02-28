@@ -1,34 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remove-project name="platform/hardware/qcom/audio"  />
-  <remove-project name="platform/hardware/qcom/camera" />
-  <remove-project name="platform/hardware/qcom/media"  />
+  <remove-project name="platform/packages/apps/Nfc" />
 
-  <!-- Remotes-->
   <remote name="github"   fetch="https://github.com" />
   <remote name="fabulous" fetch="https://github.com/Fabulous-Oreo" revision="refs/heads/oreo-mr1" />
 
-  <!--Device repos-->
-  <project name="device_oneplus_bacon"           path="device/oneplus/bacon"           remote="fabulous" />
-  <project name="device_oppo_common"             path="device/oppo/common"             remote="fabulous" />
+  <project name="device_sony_taoshan"            path="device/sony/taoshan"            remote="fabulous" />
+  <project name="kernel_sony_msm8930"            path="kernel/sony/msm8930"            remote="fabulous" />
   <project name="external_sony_boringssl-compat" path="external/sony/boringssl-compat" remote="fabulous" />
-  <project name="hardware_qcom_audio-caf"        path="hardware/qcom/audio-caf"            remote="fabulous" />
-  <project name="hardware_qcom_camera"           path="hardware/qcom/camera"           remote="fabulous" />
-  <project name="hardware_qcom_media-caf"        path="hardware/qcom/media/msm8974"    remote="fabulous" />
-  <project name="kernel_oneplus_msm8974"         path="kernel/oneplus/msm8974"         remote="fabulous" />
-  <project name="packages_apps_Snap-bacon"       path="packages/apps/Snap-bacon"       remote="fabulous" />
-  <project name="vendor_oneplus"                 path="vendor/oneplus"                 remote="fabulous" />
+  <project name="vendor_sony"                    path="vendor/sony"                    remote="fabulous" />
 
   <!-- Lineage Repos -->
-  <project name="LineageOS/android_device_qcom_common"                     revision="staging/lineage-15.1" path="device/qcom/common"                     remote="github" />
-  <project name="LineageOS/android_device_qcom_sepolicy"                   revision="staging/lineage-15.1" path="device/qcom/sepolicy"                   remote="github" />
-  <project name="LineageOS/android_external_ant-wireless_ant_native"       revision="staging/lineage-15.1" path="external/ant-wireless/ant/native"       remote="github" />
-  <project name="LineageOS/android_external_ant-wireless_ant_service"      revision="staging/lineage-15.1" path="external/ant-wireless/ant/service"      remote="github" />
-  <project name="LineageOS/android_external_ant-wireless_antradio-library" revision="staging/lineage-15.1" path="external/ant-wireless/antradio-library" remote="github" />
-  <project name="LineageOS/android_vendor_qcom_opensource_cryptfs_hw"      revision="staging/lineage-15.1" path="vendor/qcom/opensource/cryptfs_hw"      remote="github" />
-  <project name="LineageOS/android_vendor_qcom_opensource_interfaces"      revision="staging/lineage-15.1" path="vendor/qcom/opensource/interfaces"      remote="github"  >
-    <copyfile src="os_pickup.bp" dest="vendor/qcom/Android.bp" />
-  </project>
+  <project name="LineageOS/android_device_qcom_common"   revision="lineage-15.1" path="device/qcom/common"   remote="github" />
+  <project name="LineageOS/android_device_qcom_sepolicy" revision="lineage-15.1" path="device/qcom/sepolicy" remote="github" />
+  <project name="LineageOS/android_device_sony_common"   revision="lineage-15.1" path="device/sony/common"   remote="github" />
+  <project name="LineageOS/android_external_libnfc-nxp"  revision="lineage-15.1" path="external/libnfc-nxp"  remote="github" />
+  <project name="LineageOS/android_packages_apps_Nfc"    revision="lineage-15.1" path="packages/apps/Nfc"    remote="github" />
 
   <!-- Remove unused device repos -->
   <remove-project name="device/asus/fugu" />
