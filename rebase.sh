@@ -18,9 +18,10 @@
 function patch()
 {
   # ==================================================
-  # Set branch and git user/org-name here
+  # Set branch, remote name and git user/org-name here
   # ==================================================
   branch=oreo-mr1
+  remote_name=fabulous
   username=Fabulous-Oreo
   # ==================================================
   # Make a list of all repos to not modify
@@ -82,9 +83,9 @@ function patch()
     echo "";
     echo -e "\e[1;32mRebasing $(echo $repo | cut -d '/' -f 5)...\e[0m";
     cd $(echo $repo | cut -d '/' -f 5 | sed 's/_/\//g');
-    if [ ! $(git remote | grep fabulous) > /dev/null ];
+    if [ ! $(git remote | grep ${remote_name}) > /dev/null ];
     then
-      git remote add fabulous $repo;
+      git remote add $remote_name $repo;
     fi
     git pull $repo $branch --rebase;
     croot;
@@ -101,6 +102,7 @@ function patch()
   # unset all used variables
   # ==================================================
   unset branch;
+  unset remote_name;
   unset username;
   unset whitelist;
   unset whitelist_detected;
