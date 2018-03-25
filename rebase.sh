@@ -103,7 +103,9 @@ function patch()
   # unset all used variables
   # ==================================================
   unset branch;
+  unset clone_repo;
   unset remote_name;
+  unset repo;
   unset username;
   unset whitelist;
   unset whitelist_detected;
