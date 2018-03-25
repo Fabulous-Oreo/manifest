@@ -64,7 +64,7 @@ function patch()
   fi
   # ==================================================
   # Rebase
-  for repo in $(curl -s https://api.github.com/orgs/Fabulous-Oreo/repos\?per_page\=200 | grep html_url | awk 'NR%2 == 0' | cut -d ':' -f 2-3 | tr -d '",'); do
+  for repo in $(curl -s https://api.github.com/users/Fabulous-Oreo/repos\?per_page\=200 | grep html_url | awk 'NR%2 == 0' | cut -d ':' -f 2-3 | tr -d '",'); do
   {
     for clone_repo in ${whitelist[@]}; do
     { 
