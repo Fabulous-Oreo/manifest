@@ -17,7 +17,11 @@
 
 function patch()
 {
+  # ==================================================
+  # Set branch and git user/org-name here
+  # ==================================================
   branch=oreo-mr1
+  username=Fabulous-Oreo
   # ==================================================
   # Make a list of all repos to not modify
   # ==================================================
@@ -64,7 +68,7 @@ function patch()
   fi
   # ==================================================
   # Rebase
-  for repo in $(curl -s https://api.github.com/users/Fabulous-Oreo/repos\?per_page\=200 | grep html_url | awk 'NR%2 == 0' | cut -d ':' -f 2-3 | tr -d '",'); do
+  for repo in $(curl -s https://api.github.com/users/${username}/repos\?per_page\=200 | grep html_url | awk 'NR%2 == 0' | cut -d ':' -f 2-3 | tr -d '",'); do
   {
     for clone_repo in ${whitelist[@]}; do
     { 
@@ -97,6 +101,7 @@ function patch()
   # unset all used variables
   # ==================================================
   unset branch;
+  unset username;
   unset whitelist;
   unset whitelist_detected;
   # ==================================================
