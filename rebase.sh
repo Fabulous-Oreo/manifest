@@ -19,7 +19,8 @@ function patch()
 {
   branch=oreo-mr1
   # ==================================================
-  # Repos synced from local_manifest
+  # Make a list of all repos to not modify
+  # ==================================================
   whitelist=(
     manifest
     device_oneplus_bacon
@@ -35,9 +36,10 @@ function patch()
     vendor_oneplus
     vendor_sony
   )
+  whitelist_detected=();
   # ==================================================
   # Repo root
-  
+  # ==================================================
   if [ !$(declare -f croot > /dev/null; echo $?) ]; then
     while [ ! -e './build/envsetup.sh' ]; do
       cd ../;
@@ -47,6 +49,7 @@ function patch()
   croot;
   # ==================================================
   # CAF HAL detection
+  # ==================================================
   if [ ! -d "hardware/qcom/audio/.git" ]; then
     echo -e "CAF Audio HAL detected. Whitelisting hardware/qcom/audio";
     whitelist+=('hardware_qcom_audio');
@@ -67,13 +70,11 @@ function patch()
     { 
       if [ "$(echo $repo | cut -d '/' -f 5)" = "$clone_repo" ]
       then
-        echo ""; 
-        echo -e "\e[0;36mIgnoring whitelisted repo! ($(echo $repo | cut -d '/' -f 5))\e[0m";
-        echo "";
-        continue 2
+        whitelist_detected+=("$repo");
+        continue 2;
       fi
     }
-    done; 
+    done;
     echo "";
     echo -e "\e[1;32mRebasing $(echo $repo | cut -d '/' -f 5)...\e[0m";
     cd $(echo $repo | cut -d '/' -f 5 | sed 's/_/\//g');
@@ -85,8 +86,18 @@ function patch()
     croot;
   }
   done;
+  echo "";
   # ==================================================
-  unset whitelist;
+  # Print detected whitelist repos
+  # ==================================================
+  for repo in ${whitelist_detected[@]}; do
+    echo -e "\e[0;36mIgnored whitelisted repo: \e[0m$(echo $repo)";
+  done;
+  # ==================================================
+  # unset all used variables
+  # ==================================================
   unset branch;
+  unset whitelist;
+  unset whitelist_detected;
   # ==================================================
 }
