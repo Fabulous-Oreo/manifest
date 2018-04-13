@@ -2,7 +2,7 @@
 <manifest>
   <!-- Remotes-->
   <remote name="fabulous" fetch="https://github.com/Fabulous-Oreo" revision="refs/heads/oreo-mr1" />
-
+  <remove-project name="platform/hardware/qcom/camera" />
   <!--Device repos-->
   <project name="device_oneplus_bacon"           path="device/oneplus/bacon"           remote="fabulous" />
   <project name="device_oppo_common"             path="device/oppo/common"             remote="fabulous" />
